@@ -244,7 +244,7 @@ footer { padding: 60px 0 36px; border-top: 1px solid var(--border); position: re
         <div class="hero-badge fade-in"><span class="hero-badge-dot"></span>Coming to iOS</div>
         <h1 class="fade-in fade-in-delay-1">Your AI-Powered<br><span class="gradient-text">Pickleball Coach</span></h1>
         <p class="hero-desc fade-in fade-in-delay-2">PicklePath.ai assesses your skills, builds personalized training sessions, and gets smarter over time. Like having a world-class coach in your pocket.</p>
-        <form class="waitlist-form fade-in fade-in-delay-3" id="heroForm" onsubmit="return handleWaitlist(event, 'hero')">
+        <form class="waitlist-form fade-in fade-in-delay-3" id="heroForm" onsubmit="return handleWaitlist(event)">
           <input type="email" placeholder="Enter your email" required aria-label="Email address">
           <button type="submit" class="btn-cta">Get Early Access</button>
         </form>
@@ -318,7 +318,7 @@ footer { padding: 60px 0 36px; border-top: 1px solid var(--border); position: re
     <span class="section-label fade-in">Join the Waitlist</span>
     <h2 class="section-title fade-in fade-in-delay-1">Ready to transform<br><span class="gradient-text">your pickleball game?</span></h2>
     <p class="section-desc fade-in fade-in-delay-2">Be among the first to experience AI-powered pickleball training. Early access members get lifetime benefits.</p>
-    <form class="waitlist-form fade-in fade-in-delay-3" id="ctaForm" onsubmit="return handleWaitlist(event, 'cta')">
+    <form class="waitlist-form fade-in fade-in-delay-3" id="ctaForm" onsubmit="return handleWaitlist(event)">
       <input type="email" placeholder="Enter your email" required aria-label="Email address">
       <button type="submit" class="btn-cta">Get Early Access</button>
     </form>
@@ -338,32 +338,14 @@ footer { padding: 60px 0 36px; border-top: 1px solid var(--border); position: re
   </div>
 </footer>
 <script>
-const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE';
-const WAITLIST_TABLE = 'waitlist';
-async function handleWaitlist(e, formId) {
+function handleWaitlist(e) {
   e.preventDefault();
   const form = e.target;
   const email = form.querySelector('input[type="email"]').value.trim();
-  const successEl = document.getElementById(formId + 'Success');
-  const btn = form.querySelector('button');
   if (!email) return false;
-  btn.textContent = 'Joining...';
-  btn.disabled = true;
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${WAITLIST_TABLE}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'Prefer': 'return=minimal' },
-      body: JSON.stringify({ email, source: 'landing_page' })
-    });
-    if (res.ok || res.status === 201) {
-      form.style.display = 'none'; successEl.style.display = 'flex';
-    } else {
-      const data = await res.json().catch(() => ({}));
-      if (data.code === '23505') { form.style.display = 'none'; successEl.innerHTML = '<i class="fas fa-check-circle"></i> You're already on the list! We'll be in touch.'; successEl.style.display = 'flex'; }
-      else { throw new Error('Failed'); }
-    }
-  } catch (err) { btn.textContent = 'Get Early Access'; btn.disabled = false; form.style.display = 'none'; successEl.style.display = 'flex'; }
+  const subject = encodeURIComponent('PicklePath.ai waitlist');
+  const body = encodeURIComponent('Please add me to the waitlist.\n\nEmail: ' + email);
+  window.location.href = 'mailto:hello@picklepath.ai?subject=' + subject + '&body=' + body;
   return false;
 }
 const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
