@@ -157,6 +157,30 @@ nav {
   text-decoration: none;
 }
 
+.legal-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 0.9rem;
+}
+.legal-doc table th,
+.legal-doc table td {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.legal-doc table th {
+  background: var(--card);
+  font-weight: 600;
+  color: var(--text);
+}
+.legal-doc table td {
+  color: var(--text-secondary);
+}
+.legal-doc table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
 footer { padding: 48px 0 28px; border-top: 1px solid var(--border); }
 .footer-inner { display: flex; justify-content: space-between; gap: 40px; margin-bottom: 32px; }
 .footer-brand { max-width: 300px; }
