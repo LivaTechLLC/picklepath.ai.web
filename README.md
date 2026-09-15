@@ -7,12 +7,15 @@ Marketing site for PicklePath.ai — AI-powered pickleball training.
 
 ## Pages the iOS app opens
 
-| App extra | URL |
+| Use | URL |
 |---|---|
-| `privacyPolicyUrl` | https://picklepath.ai/privacy |
-| `termsUrl` | https://picklepath.ai/terms |
+| Privacy Policy | https://picklepath.ai/privacy |
+| Terms of Service | https://picklepath.ai/terms |
+| Support (Guideline 1.5) | https://picklepath.ai/support |
 
-Those paths are `privacy/index.html` and `terms/index.html` so they work on GitHub Pages with or without a trailing slash.
+Those paths are `privacy/index.html`, `terms/index.html`, and `support/index.html` so they work on GitHub Pages with or without a trailing slash.
+
+Set the App Store Connect **Support URL** to `https://picklepath.ai/support` at submission. This site has no App Store listing link.
 
 ## GitHub Pages
 
@@ -27,7 +30,7 @@ To serve `https://picklepath.ai`:
 3. In **Settings → Pages → Custom domain**, enter `picklepath.ai` (GitHub will commit a `CNAME` file). Turn on **Enforce HTTPS**.
 4. Do not add a `CNAME` file until that DNS is ready — it will make the `github.io` URL follow the custom domain.
 
-Until the custom domain resolves, App Store / in-app links will 404. Do not submit the app before that.
+Until the custom domain resolves, in-app privacy/terms/support links will 404. Do not submit the app before that.
 
 ## Local preview
 
@@ -36,4 +39,5 @@ python3 -m http.server 8080
 # http://localhost:8080
 # http://localhost:8080/privacy/
 # http://localhost:8080/terms/
+# http://localhost:8080/support/
 ```
