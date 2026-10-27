@@ -77,9 +77,9 @@
   <p>Product analytics are <strong>on by default</strong>. We record how you use features, such as which suggestions were shown or tapped, which conversation starters you used, and which buttons you tapped, so we can improve the app. You can turn analytics off at any time in <strong>Settings → Privacy → Analytics</strong>. When analytics are off, we stop storing this usage data. We still save a few actions the app needs in order to work the way you set it: hiding a suggestion you dismissed, how often a coach card can come back, and your mindset card progress. Analytics are first-party: we do not use third-party analytics or advertising SDKs.</p>
   <h3>Device and technical data</h3>
   <ul>
-    <li>Crash and error reports from App Store builds, processed by Sentry: error details, app version, device model, and iOS version. These reports do not include your name or email address.</li>
+    <li>Error reports from our servers and from App Store builds are processed by Sentry: error details, app version, device model, and iOS version. They do not include your name or email address.</li>
     <li>Server logs with your account ID, request IDs, and timing. Logs do not include email addresses and are rotated.</li>
-    <li>If you allow notifications on your iPhone, your device’s push token and device name (the name set in iOS, which may include your name), so we can send notifications.</li>
+    <li>If you allow notifications on your iPhone, your device’s push token, so we can send notifications.</li>
     <li>Sign-in tokens, which stay on your device in the iOS Keychain.</li>
   </ul>
   <h3>What we do not collect</h3>
@@ -141,7 +141,7 @@
       </tr>
       <tr>
         <td>Device and diagnostics</td>
-        <td>Crash reports, app version, device model, iOS version, push token, device name</td>
+        <td>Crash reports, app version, device model, iOS version, push token</td>
         <td>Reliability, security, notifications</td>
         <td>Sentry, Apple, hosting providers</td>
         <td>No</td>
@@ -174,16 +174,16 @@
   <h2 id="ai">4. AI features</h2>
   <p>Some features use AI: chat with Coach PATH or Assistant Coach Pickle, coach tools (session prep, feedback drafts, insights, and progress reports), AI-drafted coach bios, goal suggestions, smart session build and the quick quiz, conversation starters, chat titles, and tagging notes and goals by skill focus.</p>
   <p><strong>Consent.</strong> The app asks for your consent before you first send a chat message. One consent covers every AI feature. Without it, chat is not available, and every other feature still works without AI.</p>
-  <p><strong>What we send.</strong> When you use an AI feature with consent, we send the text you write, plus relevant context: your name, email address, role, skill level, training history, ratings, goals, training priorities, and notes your coach wrote about you that are marked “Shared with AI”. If you are a coach and you select a player or use coach tools, that player’s name, email address, training history, ratings, goals, and your notes about them marked “Shared with AI” are included. New coach notes are marked “Shared with AI” by default; a coach can change any note to private.</p>
+  <p><strong>What we send.</strong> When you use an AI feature with consent, we send the text you write, plus relevant context: your role, skill level, training history, ratings, goals, training priorities, and notes your coach wrote about you that are marked “Shared with AI”. If you are a coach and you select a player or use coach tools, that player’s training history, ratings, goals, and your notes about them marked “Shared with AI” are included. We do not send names or email addresses to AI providers; names that you type in a message or note are sent as written. New coach notes are marked “Shared with AI” by default; a coach can change any note to private.</p>
   <p><strong>What we never send.</strong> Physical limitations, limitation notes, birth year, age group, videos, photos, phone number, and payment information.</p>
   <p><strong>Who receives it.</strong> <strong>Anthropic PBC</strong> (Claude) generates AI results. To tag coach notes by skill focus, we may also send the note text to <strong>OpenRouter</strong> or <strong>Cloudflare Workers AI</strong>. These providers process the data to return a result to us.</p>
   <p><strong>Training AI models.</strong> We do not collect, use, or sell personal information to train large language models. Anthropic’s commercial terms do not allow it to train its models on the data we send.</p>
-  <p><strong>Withdrawing consent.</strong> You can withdraw your consent at any time by emailing <a href="mailto:support@picklepath.ai?subject=Withdraw%20AI%20consent">support@picklepath.ai</a> from the address on your account. From then on, chat is off and other features work without AI. Data already sent to an AI provider cannot be recalled.</p>
+  <p><strong>Withdrawing consent.</strong> You can withdraw your consent at any time in <strong>Settings → Privacy → AI features</strong>, or by emailing <a href="mailto:support@picklepath.ai?subject=Withdraw%20AI%20consent">support@picklepath.ai</a> from the address on your account. From then on, chat is off and other features work without AI. Data already sent to an AI provider cannot be recalled.</p>
   <p>AI results can be wrong. They are not medical advice.</p>
 
   <h2 id="visibility">5. What other users can see</h2>
   <ul>
-    <li><strong>Search.</strong> Any signed-in user can find you by name, or by your exact email address, and see your name, photo, and city and state if you added them. They can send you a connection request with a message. Your email address is never shown. You can block anyone from their profile.</li>
+    <li><strong>Search.</strong> Any signed-in user can find you by name, or by your exact email address, and see your name, photo, and city and state if you added them. Accounts of users aged 13 to 17 do not appear in search for people they are not connected to. They can send you a connection request with a message. Your email address is never shown. You can block anyone from their profile.</li>
     <li><strong>Coach profiles.</strong> A coach’s name, photo, bio, specialties, and location appear in coach search unless the coach sets the profile to hidden. A coach’s intro video is shown only to the coach and to players with an accepted, active connection to that coach.</li>
     <li><strong>Connected coaches and players.</strong> A coach you connect with can see your training history, ratings, goals, and the notes and videos you share in that relationship. Coaches choose, note by note, whether you can see a note they write about you and whether it is shared with AI features.</li>
     <li><strong>Reports.</strong> We do not tell a user who reported them.</li>
@@ -201,12 +201,13 @@
     </thead>
     <tbody>
       <tr><td>OVHcloud (United States)</td><td>Servers and database</td><td>All account and app data</td></tr>
-      <tr><td>Cloudflare</td><td>Network security, file storage, encrypted backups</td><td>App traffic, uploaded videos and photos, encrypted backups</td></tr>
+      <tr><td>Cloudflare</td><td>Network security for app traffic, file storage and encrypted backups</td><td>App traffic, uploaded videos and photos, encrypted backups</td></tr>
       <tr><td>Anthropic</td><td>AI features (with your consent)</td><td>See section 4</td></tr>
       <tr><td>OpenRouter, Cloudflare Workers AI</td><td>Tagging coach notes by skill focus (with consent)</td><td>Coach note text</td></tr>
       <tr><td>RevenueCat</td><td>Subscription management</td><td>Account ID, subscription events</td></tr>
       <tr><td>Apple</td><td>Sign in with Apple, App Store payments, push notification delivery</td><td>Sign-in token, purchases, push token</td></tr>
       <tr><td>Google</td><td>Google Sign-In</td><td>Sign-in token</td></tr>
+      <tr><td>GitHub</td><td>Hosting of the picklepath.ai website</td><td>It may receive your IP address when you visit the website</td></tr>
       <tr><td>Sentry</td><td>Crash and error reports</td><td>Diagnostic data</td></tr>
     </tbody>
   </table>
@@ -235,9 +236,9 @@
   <ul>
     <li><strong>Account, profile, and training data:</strong> while your account is active, until you delete it or ask us to.</li>
     <li><strong>Physical limitations:</strong> until you clear them or delete your account.</li>
-    <li><strong>Server logs and rate-limit counters:</strong> a short time, on a rolling basis.</li>
+    <li><strong>Server logs and rate-limit counters:</strong> Server logs (account and request identifiers, error details) are kept for up to 90 days on systems we control, then deleted. Rate-limit counters expire on a rolling basis.</li>
     <li><strong>Crash and error reports:</strong> under Sentry’s standard retention period.</li>
-    <li><strong>Encrypted backups:</strong> kept on a rolling schedule and fully replaced within 6 months.</li>
+    <li><strong>Encrypted backups:</strong> Encrypted backups are kept on Cloudflare R2 and on storage we control, and are fully replaced within 6 months.</li>
     <li><strong>Under-13 sign-ups:</strong> deleted right away.</li>
   </ul>
 
