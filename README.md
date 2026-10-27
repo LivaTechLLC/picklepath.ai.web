@@ -12,6 +12,7 @@ Marketing site for PicklePath.ai — AI-powered pickleball training.
 | Privacy Policy | https://picklepath.ai/privacy |
 | Terms of Service | https://picklepath.ai/terms |
 | Support (Guideline 1.5) | https://picklepath.ai/support |
+| Consumer Health Data Privacy Policy (Washington MHMDA, Nevada, Connecticut; linked from the homepage footer) | https://picklepath.ai/consumer-health-data |
 
 Those paths are `privacy/index.html`, `terms/index.html`, and `support/index.html` so they work on GitHub Pages with or without a trailing slash.
 
