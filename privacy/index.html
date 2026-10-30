@@ -32,7 +32,7 @@
   <div class="container">
     <span class="section-label">Legal</span>
     <h1>Privacy <span class="gradient-text">Policy</span></h1>
-    <p class="legal-meta">Effective October 27, 2026 · Last updated October 27, 2026</p>
+    <p class="legal-meta">Effective October 27, 2026 · Last updated [PUBLISH DATE]</p>
   </div>
 </header>
 
@@ -70,6 +70,7 @@
     <li>Messages you send to the in-app AI assistants (Coach PATH for players, Assistant Coach Pickle for coaches) and their replies</li>
     <li>Connection requests and the messages you include with them, reports you submit about other users’ content, and users you block</li>
     <li>Your actions on mindset cards (viewed, completed, rated, or dismissed)</li>
+    <li>If you create a calendar link, a record of that link. We store only a scrambled (hashed) version of the link, so we can check it but can’t read it back.</li>
   </ul>
   <h3>Purchases</h3>
   <p>Subscriptions are sold through the Apple App Store. Apple handles payment; we never receive your card or bank details. We use RevenueCat to manage subscription status: we give RevenueCat your PicklePath account ID, and we receive your subscription events (product, purchase, renewal, trial, and expiry dates). We store your current plan and its expiry date.</p>
@@ -185,7 +186,9 @@
   <ul>
     <li><strong>Search.</strong> Any signed-in user can find you by name, or by your exact email address, and see your name, photo, and city and state if you added them. Accounts of users aged 13 to 17 do not appear in search for people they are not connected to. They can send you a connection request with a message. Your email address is never shown. You can block anyone from their profile.</li>
     <li><strong>Coach profiles.</strong> A coach’s name, photo, bio, specialties, and location appear in coach search unless the coach sets the profile to hidden. A coach’s intro video is shown only to the coach and to players with an accepted, active connection to that coach.</li>
-    <li><strong>Connected coaches and players.</strong> A coach you connect with can see your training history, ratings, goals, and the notes and videos you share in that relationship. Coaches choose, note by note, whether you can see a note they write about you and whether it is shared with AI features.</li>
+    <li><strong>Connected coaches and players.</strong> A coach you connect with can see your training history, ratings, goals, and the notes and videos you share in that relationship. Coaches choose, note by note, whether you can see a note they write about you and whether it is shared with AI features. When a coach schedules a session with you, the app tells them if you already have a session with another coach at that time. It shows only the time, never the other session’s title or details.</li>
+    <li><strong>Coach sharing (off unless you turn it on).</strong> If you connect with more than one coach, the app asks once whether your coaches may see each other’s work with you. You can change this at any time in the app. When it’s on, each of your connected coaches can see who your lead coach is, the training focus your other coaches set for you, the time and title of your upcoming sessions with your other coaches, and the notes your other coaches shared with you. Coaches never see each other’s private notes, notes kept only for AI features, or session feedback. <strong>If you’re a coach:</strong> when a player turns this on, that player’s other coaches can see your focus settings, your upcoming sessions with that player, and the notes you shared with that player.</li>
+    <li><strong>Calendar link.</strong> If you create a private calendar link, anyone who has the link can see the sessions in it without signing in: the title, time and any cancellation note of your own sessions (for a coach, your sessions with your players). The calendar is named with your name. Keep the link private. You can turn it off or replace it in the app at any time, and the old link stops working right away.</li>
     <li><strong>Reports.</strong> We do not tell a user who reported them.</li>
   </ul>
 
@@ -212,6 +215,7 @@
     </tbody>
   </table>
   <p>We receive only the identity token from Apple or Google; we never receive your password. You can disconnect Google in Settings, or stop using Sign in with Apple in iOS Settings.</p>
+  <p>If you add your calendar link to a calendar app such as Apple Calendar or Google Calendar, that app fetches your sessions from us and keeps them under its own privacy policy. You choose to send it there; we don’t share your calendar with anyone else.</p>
   <p>We may also disclose information if the law requires it, to protect the safety of our users or the public, or as part of a merger, acquisition, or sale of our business, in which case this policy continues to apply to your information.</p>
 
   <h2 id="choices">7. Your choices</h2>
@@ -224,11 +228,13 @@
     <li>Report content, block a user, or end a coach or player connection</li>
     <li>Disconnect Google in Settings, or stop using Sign in with Apple in iOS Settings</li>
     <li>Ask for a copy of your data, a correction, or deletion by emailing support</li>
+    <li>Turn coach sharing on or off in the app</li>
+    <li>Create, replace, or turn off your private calendar link in the app</li>
   </ul>
 
   <h2 id="deletion">8. Account deletion</h2>
   <p>You can delete your account in the app under <strong>Settings → Delete Account</strong>, or by emailing <a href="mailto:support@picklepath.ai?subject=Delete%20my%20PicklePath.ai%20account">support@picklepath.ai</a> from the address on the account.</p>
-  <p>When you delete your account, we remove your name, email address, and sign-in identifiers, sign you out on every device, ask Apple to revoke Sign in with Apple for PicklePath.ai, and delete the data tied to your account: videos and photos, sessions, assessments, goals, chat history, notes, connections, analytics and engagement records, physical limitations, AI consent records, and push tokens.</p>
+  <p>When you delete your account, we remove your name, email address, and sign-in identifiers, sign you out on every device, ask Apple to revoke Sign in with Apple for PicklePath.ai, and delete the data tied to your account: videos and photos, sessions, assessments, goals, chat history, notes, connections, analytics and engagement records, physical limitations, AI consent records, push tokens, and calendar links.</p>
   <p>We keep only what we need for safety and the law: reports about content (so moderation decisions stand), aggregated statistics that do not identify you, and records that prevent duplicate subscription processing. Deleted data can remain in our encrypted backups until those backups expire; it is removed from backups within 6 months.</p>
   <p>Deleting your account does not cancel an Apple subscription. Cancel it in your Apple ID settings. Deleting PicklePath.ai does not delete your Apple or Google account.</p>
 
@@ -236,6 +242,7 @@
   <ul>
     <li><strong>Account, profile, and training data:</strong> while your account is active, until you delete it or ask us to.</li>
     <li><strong>Physical limitations:</strong> until you clear them or delete your account.</li>
+    <li><strong>Calendar link:</strong> until you turn it off, replace it, or delete your account.</li>
     <li><strong>Server logs and rate-limit counters:</strong> Server logs (account and request identifiers, error details) are kept for up to 90 days on systems we control, then deleted. Rate-limit counters expire on a rolling basis.</li>
     <li><strong>Crash and error reports:</strong> under Sentry’s standard retention period.</li>
     <li><strong>Encrypted backups:</strong> Encrypted backups are kept on Cloudflare R2 and on storage we control, and are fully replaced within 6 months.</li>
