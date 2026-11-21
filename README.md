@@ -16,7 +16,7 @@ Marketing site for PicklePath.ai — AI-powered pickleball training.
 
 Those paths are `privacy/index.html`, `terms/index.html`, and `support/index.html` so they work on GitHub Pages with or without a trailing slash.
 
-Set the App Store Connect **Support URL** to `https://picklepath.ai/support` at submission. This site has no App Store listing link.
+Set the App Store Connect **Support URL** to `https://picklepath.ai/support` at submission. App Store listing: https://apps.apple.com/us/app/picklepath-ai/id6758278691
 
 ## GitHub Pages
 
